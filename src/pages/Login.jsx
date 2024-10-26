@@ -10,14 +10,11 @@ const Login = () => {
 
     const loginUser = (event) => {
         event.preventDefault()
-        console.log(email.current.value);
-        console.log(password.current.value);
 
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
-                console.log(user);
-                const user = userCredential.user;
                 navigate('/')
+                const user = userCredential.user;
             })
             .catch((error) => {
                 const errorCode = error.code;

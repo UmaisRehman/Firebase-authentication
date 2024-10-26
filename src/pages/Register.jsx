@@ -9,13 +9,10 @@ const Register = () => {
 
     const registerUser = (event) => {
         event.preventDefault()
-        console.log(email.current.value);
-        console.log(password.current.value);
 
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user)
             })
             .catch((error) => {
                 const errorMessage = error.message;
